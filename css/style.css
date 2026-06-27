@@ -1,4 +1,26 @@
-body{font-family:Arial;text-align:center;background:#f5f5f5}
-button{display:block;width:260px;height:80px;margin:15px auto;font-size:24px;border:none;border-radius:12px}
-.page{display:none}
-table{margin:auto}
+body {
+  font-family:Arial;
+  text-align:center;
+  background:#f5f5f5
+}
+button {
+  display:block;
+  width:260px;
+  height:80px;
+  margin:15px auto;
+  font-size:24px;
+  border:none;
+  border-radius:12px}
+.page {
+  display:none
+}
+table {
+  margin:auto
+}
+.logo {
+  display: block;          /* Changes image from inline to block */
+  margin-left: auto;       /* Automatically calculates left space */
+  margin-right: auto;      /* Automatically calculates right space */
+  width: 300px;            /* Set your exact desired width (can also use percentages like 50%) */
+  height: auto;            /* Keeps the logo proportional */
+}
