@@ -4,8 +4,10 @@
 <script src='https://unpkg.com/html5-qrcode'></script>
 </head>
 <body>
-<div id='home'><img src="logo_lapak_rapi.png"/>
-<button onclick="show('scan')">Input Baru</button><button onclick="show('cek')">Cek Lapak</button><button onclick="renderReport();show('laporan')">Laporan</button></div>
+<div id='home'></div>
+<div id='lapakrapi' class='logo'><img src="logo_lapak_rapi.png"/></div>
+<button onclick="show('scan')">Input Baru</button><button onclick="show('cek')">Cek Lapak</button>
+<button onclick="renderReport();show('laporan')">Laporan</button></div>
 <div id='scan' class='page'><h2>Scan QR</h2>
 <div id='reader'></div><div id='hasil'></div>
 <button onclick="back()">Kembali</button></div>
