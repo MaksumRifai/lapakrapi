@@ -14,28 +14,38 @@ body {
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0,0,0,.15);
   width: 412px;
-  height: 800px;
-  box-sizing: border-box; /* Memastikan padding tidak membuat card melar */
+  height: 740px;
+  box-sizing: border-box;
   
-  /* Flexbox untuk mengatur susunan vertikal */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Mengetengahkan semua elemen di dalamnya */
-}
-
-/* Container Menu Utama agar tombol-tombol rapi */
-#home {
-  width: 100%;
+  /* Flexbox utama */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* LOGO ATAS (LapakRapi) */
+#lapakrapi {
+  width: 100%;
+  margin-top: 10px; /* Jarak sedikit dari atas card */
+}
+
+/* MENU UTAMA (Tombol-tombol sekarang turun ke tengah layar) */
+#home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* Trik mendorong menu ke tengah secara vertikal */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 button {
-  width: 90%; /* Sedikit diperkecil dari 100% agar terlihat manis di dalam card */
+  width: 90%;
   max-width: 320px;
   padding: 14px;
-  margin-top: 12px;
+  margin-top: 15px; /* Jarak antar tombol */
   background: #27ae60;
   color: white;
   border: none;
@@ -46,12 +56,15 @@ button {
 }
 
 button:hover {
-  background: #219653; /* Efek visual saat tombol ditekan/disentuh */
+  background: #219653;
 }
 
 .page {
   display: none;
   width: 100%;
+  /* Agar halaman Scan/Cek/Laporan juga proporsional di tengah saat dibuka */
+  margin-top: auto;
+  margin-bottom: auto; 
 }
 
 table {
@@ -63,19 +76,19 @@ table {
 .logo {
   display: block;
   margin: 0 auto;
-  width: 55%; /* Ukuran logo disesuaikan */
+  width: 55%;
   height: auto;
 }
 
-/* Menggeser area logo bawah agar lebih turun */
+/* LOGO BAWAH (Sponsor) */
 #maxwebtoons {
-  margin-top: auto; /* Trik Flexbox: Otomatis mendorong logo ke bagian paling bawah card */
-  padding-top: 40px; /* Jarak aman dari tombol terakhir */
+  /* Tetap menempel di paling bawah */
+  padding-top: 20px; 
   width: 100%;
 }
 
 #desainerhub {
-  margin-top: 15px; /* Jarak antar logo bawah */
+  margin-top: 15px;
   margin-bottom: 10px;
   width: 100%;
 }
