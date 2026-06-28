@@ -13,12 +13,13 @@
     
     <div id='home'>
       <button onclick="show('scan')">Input Pembayaran</button>
-      <button onclick="show('cek')">Detail Lapak</button>
-      <button onclick="renderReport();show('laporan')">Laporan/Status</button>
+      <button onclick="show('cek')">Cek Detail Lapak</button>
+      <button onclick="renderReport();show('laporan')">Status Iuran</button>
     </div>
 
     <div id='scan' class='page' style="display: none;">
       <h2>Scan QR</h2>
+      <p>Scan Gambar QR yang ada di lapak pedagang, atau unggah dari galeri</p>
       <div id='reader'></div>
       <div id='hasil'></div>
       <button onclick="back()">Kembali</button>
@@ -33,7 +34,7 @@
     </div>
     
     <div id='laporan' class='page' style="display: none;">
-      <h2>Laporan/Status Iuran</h2>
+      <h2>Laporan/Detail Iuran</h2>
       <table id='tbl' border=1>
         <tr>
           <th>Waktu Bayar</th>
