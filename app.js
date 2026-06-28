@@ -22,10 +22,34 @@ function back() {
   home.style.display = 'block';
 }
 
-// Fungsi Cek Pedagang Manual berdasarkan Input
+// Fungsi Cek Pedagang Manual (Sekarang menampilkan format Tabel)
 function cek() {
   let p = pedagang.find(x => x.id === kode.value);
-  info.textContent = p ? JSON.stringify(p, null, 2) : 'Tidak ditemukan';
+  
+  if (p) {
+    info.innerHTML = `
+      <table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+        <tr>
+          <th style="padding: 8px; background-color: #f2f2f2;">Detail</th>
+          <th style="padding: 8px; background-color: #f2f2f2;">Informasi</th>
+        </tr>
+        <tr>
+          <td style="padding: 8px; font-weight: bold;">Kode Pedagang</td>
+          <td style="padding: 8px;">${p.id}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; font-weight: bold;">Nama Usaha</td>
+          <td style="padding: 8px;">${p.nama}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; font-weight: bold;">Nomor Lapak</td>
+          <td style="padding: 8px;">${p.lapak}</td>
+        </tr>
+      </table>
+    `;
+  } else {
+    info.innerHTML = '<span style="color: red; font-weight: bold;">Tidak ditemukan</span>';
+  }
 }
 
 // Fungsi Inisialisasi Scanner QR
@@ -43,7 +67,6 @@ function ok(txt) {
     return;
   }
   
-  // Mengirimkan p.id, p.nama, dan p.lapak ke fungsi simpan
   hasil.innerHTML = `
     <h3>${p.nama} (${p.lapak})</h3>
     <select id="j">
@@ -56,7 +79,7 @@ function ok(txt) {
   `;
 }
 
-// Fungsi Simpan Data ke LocalStorage (ditambahkan parameter id dan lapak)
+// Fungsi Simpan Data ke LocalStorage
 function simpan(id, nama, lapak) {
   let arr = JSON.parse(localStorage.getItem('lapakrapi') || '[]');
   
@@ -73,14 +96,12 @@ function simpan(id, nama, lapak) {
   back();
 }
 
-// Fungsi Menampilkan Laporan ke Tabel HTML (ditambahkan kolom ID dan Lapak)
+// Fungsi Menampilkan Laporan ke Tabel HTML
 function renderReport() {
   let arr = JSON.parse(localStorage.getItem('lapakrapi') || '[]');
   
-  // Memperbarui Header Tabel
   tbl.innerHTML = '<tr><th>Waktu Pembayaran</th><th>Kode Pedagang</th><th>Nama Usaha</th><th>Nomor Lapak</th><th>Jenis Iuran</th></tr>';
   
-  // Memperbarui Baris Data Tabel
   arr.forEach(r => {
     tbl.innerHTML += `
       <tr>
