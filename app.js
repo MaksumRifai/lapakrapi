@@ -34,7 +34,7 @@ function cek() {
           <th style="padding: 8px; background-color: #f2f2f2;">Informasi</th>
         </tr>
         <tr>
-          <td style="padding: 8px; font-weight: bold;">Kode Pedagang</td>
+          <td style="padding: 8px; font-weight: bold;">Kode Usaha</td>
           <td style="padding: 8px;">${p.id}</td>
         </tr>
         <tr>
@@ -69,6 +69,7 @@ function ok(txt) {
   
   hasil.innerHTML = `
     <h3>${p.nama} (${p.lapak})</h3>
+    <p>Pilih Jenis Iuran :</p>
     <select id="j">
       <option>Kebersihan</option>
       <option>Keamanan</option>
@@ -100,7 +101,7 @@ function simpan(id, nama, lapak) {
 function renderReport() {
   let arr = JSON.parse(localStorage.getItem('lapakrapi') || '[]');
   
-  tbl.innerHTML = '<tr><th>Waktu Pembayaran</th><th>Kode Pedagang</th><th>Nama Usaha</th><th>Nomor Lapak</th><th>Jenis Iuran</th></tr>';
+  tbl.innerHTML = '<tr><th>Waktu Bayar</th><th>Kode Usaha</th><th>Nama Usaha</th><th>Nomor Lapak</th><th>Jenis Iuran</th></tr>';
   
   arr.forEach(r => {
     tbl.innerHTML += `
