@@ -5,6 +5,7 @@
 </head>
 <body>
 <div class='card'>
+<div id='home'></div>
 <div id='lapakrapi'><img src="logo_lapak_rapi.png" class='logo'></div>
 <button onclick="show('scan')">Input Pembayaran</button><button onclick="show('cek')">Detail Lapak</button>
 <button onclick="renderReport();show('laporan')">Laporan/Status</button></div>
@@ -12,7 +13,7 @@
 <div id='reader'></div><div id='hasil'></div>
 <button onclick="back()">Kembali</button></div>
 <div id='cek' class='page'><input id='kode' placeholder='Kode Pedagang'><button onclick='cek()'>Cari</button><pre id='info'></pre><button onclick="back()">Kembali</button></div>
-<div id='laporan' class='page'><h2>Laporan/Status Iuran</h2><table id='tbl' border=1><tr><th>Waktu</th><th>Pedagang</th><th>Jenis</th></tr></table><button onclick="back()">Kembali</button></div>
+<div id='laporan' class='page'><h2>Laporan/Status Iuran</h2><table id='tbl' border=1><tr><th>Waktu Pembayaran</th><th>Nama Usaha</th><th>Jenis Iuran</th></tr></table><button onclick="back()">Kembali</button></div>
 </div>
 <div id='maxwebtoons'><img src="logo_maxwebtoons_wide.png" class='logo'></div>
 <div id='desainerhub'><img src="desainerhub.png" class='logo'></div>
