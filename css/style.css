@@ -1,40 +1,81 @@
-body{
-background:#f2f2f2;
-font-family:Arial;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
+body {
+  background: #f2f2f2;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
-button{
-width:100%;
-padding:14px;
-margin-top:15px;
-background:#27ae60;
-color:white;
-border:none;
-font-size:18px;
-border-radius:10px;
-cursor:pointer;
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,.15);
+  width: 412px;
+  height: 800px;
+  box-sizing: border-box; /* Memastikan padding tidak membuat card melar */
+  
+  /* Flexbox untuk mengatur susunan vertikal */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Mengetengahkan semua elemen di dalamnya */
 }
+
+/* Container Menu Utama agar tombol-tombol rapi */
+#home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  width: 90%; /* Sedikit diperkecil dari 100% agar terlihat manis di dalam card */
+  max-width: 320px;
+  padding: 14px;
+  margin-top: 12px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #219653; /* Efek visual saat tombol ditekan/disentuh */
+}
+
 .page {
-  display:none
+  display: none;
+  width: 100%;
 }
+
 table {
-  margin:auto
+  margin: 20px auto;
+  width: 100%;
+  border-collapse: collapse;
 }
+
 .logo {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: 0 auto;
+  width: 55%; /* Ukuran logo disesuaikan */
+  height: auto;
 }
-.card{
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 0 20px rgba(0,0,0,.15);
-width:412px;
-height:800px;
-text-align:center;
+
+/* Menggeser area logo bawah agar lebih turun */
+#maxwebtoons {
+  margin-top: auto; /* Trik Flexbox: Otomatis mendorong logo ke bagian paling bawah card */
+  padding-top: 40px; /* Jarak aman dari tombol terakhir */
+  width: 100%;
+}
+
+#desainerhub {
+  margin-top: 15px; /* Jarak antar logo bawah */
+  margin-bottom: 10px;
+  width: 100%;
 }
