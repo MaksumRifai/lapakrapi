@@ -14,29 +14,27 @@ body {
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0,0,0,.15);
   width: 412px;
-  height: 740px;
+  height: 800px;
   box-sizing: border-box;
   
-  /* Flexbox utama */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* LOGO ATAS (LapakRapi) */
+/* LOGO ATAS */
 #lapakrapi {
   width: 100%;
-  margin-top: 10px; /* Jarak sedikit dari atas card */
+  margin-top: 10px;
+  flex-shrink: 0; /* Mencegah logo gepeng saat halaman penuh */
 }
 
-/* MENU UTAMA (Tombol-tombol sekarang turun ke tengah layar) */
+/* MENU UTAMA */
 #home {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  /* Trik mendorong menu ke tengah secara vertikal */
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -45,7 +43,7 @@ button {
   width: 90%;
   max-width: 320px;
   padding: 14px;
-  margin-top: 15px; /* Jarak antar tombol */
+  margin-top: 15px;
   background: #27ae60;
   color: white;
   border: none;
@@ -62,15 +60,46 @@ button:hover {
 .page {
   display: none;
   width: 100%;
-  /* Agar halaman Scan/Cek/Laporan juga proporsional di tengah saat dibuka */
   margin-top: auto;
   margin-bottom: auto; 
+}
+
+/* KHUSUS HALAMAN LAPORAN AGAR BISA SCROLL */
+#laporan {
+  max-height: 480px;    /* Batas tinggi maksimal area laporan di dalam card */
+  overflow-y: auto;     /* Otomatis memunculkan scrollbar jika data melebihi batas */
+  padding-right: 5px;   /* Memberi sedikit ruang untuk scrollbar */
+  box-sizing: border-box;
+}
+
+/* Menyembunyikan tampilan scrollbar bawaan browser agar terlihat lebih minimalis (Opsional) */
+#laporan::-webkit-scrollbar {
+  width: 6px;
+}
+#laporan::-webkit-scrollbar-thumb {
+  background-color: #rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 table {
   margin: 20px auto;
   width: 100%;
   border-collapse: collapse;
+}
+
+/* Desain tambahan untuk baris tabel agar terlihat rapi saat discroll */
+table, th, td {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th, td {
+  padding: 10px 8px;
+  font-size: 14px;
+}
+th {
+  background-color: #f2f2f2;
+  position: sticky; /* Membuat kepala tabel tetap di atas saat di-scroll */
+  top: 0;
 }
 
 .logo {
@@ -80,15 +109,16 @@ table {
   height: auto;
 }
 
-/* LOGO BAWAH (Sponsor) */
+/* LOGO BAWAH */
 #maxwebtoons {
-  /* Tetap menempel di paling bawah */
   padding-top: 20px; 
   width: 100%;
+  flex-shrink: 0; /* Mencegah logo ikut tertekan atau mengecil */
 }
 
 #desainerhub {
   margin-top: 15px;
   margin-bottom: 10px;
   width: 100%;
+  flex-shrink: 0;
 }
